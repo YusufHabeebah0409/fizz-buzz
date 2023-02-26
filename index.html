@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIZZ BUZZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <marquee behavior="scroll" direction="left">
+        <h3 style="color:olive ;font-size: 30px;">Note!! Fizz Buzz Is a Game That Deals With The Mutiple Of 3 And 5,</h3>
+    </marquee>
+    <div id="crossover" style="text-align:center ;">
+        <h1>FIZZ BUZZ</h1>
+        <input type="text" id="userInput" placeholder="Enter Your Number...">
+        <button onclick="fizzBuzz()">CHECK</button>
+        <div id="disp" style="color:navy; font-size: 30px; padding: 15px;"></div>
+    </div>
+
+    <script>
+       var song = new Audio("poor.mp3")
+       var wrong = new Audio("wrong.mp3")
+        function fizzBuzz() {
+            
+            if( userInput.value ==""){
+                disp.innerHTML ="" 
+            }else if (userInput.value % 3 == 0 && userInput.value % 5 == 0) {
+                disp.innerHTML = "<h2>FIZZ BUZZ</h2>"
+            } else if (userInput.value % 5 == 0) {
+                disp.innerHTML = "<h2>BUZZ</h2>"
+                wrong.play()
+            } else if (userInput.value % 3 == 0) {
+                disp.innerHTML = "<h2>FIZZ</h2>"
+                song.play()
+            } else{
+                disp.innerHTML =" <h2> Enter A Proper Number </h2>"
+            }  
+            userInput.value =""
+        }
+    </script>
+</body>
+
+</html>
